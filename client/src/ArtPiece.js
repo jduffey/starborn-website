@@ -40,7 +40,7 @@ const createFourSquareArt = (fillColor) => {
     ];
 }
 
-const ArtPiece = ({ backgroundColor }) => {
+const ArtPiece = ({ backgroundColor, artStyle }) => {
     return (
         <div>
             <h2>Art Piece Placeholder</h2>
@@ -48,9 +48,12 @@ const ArtPiece = ({ backgroundColor }) => {
                 className="art-piece"
                 style={{ backgroundColor: backgroundColor }}
             >
-                {/* {createTwoHorizontalBarArt("pink")} */}
-                {/* {createTwoVerticalBarArt("pink")} */}
-                {createFourSquareArt("pink")}
+                {{
+                    0: singleSquare("pink"),
+                    1: createTwoHorizontalBarArt("pink"),
+                    2: createTwoVerticalBarArt("pink"),
+                    3: createFourSquareArt("pink"),
+                }[artStyle]}
             </svg>
         </div>
     );

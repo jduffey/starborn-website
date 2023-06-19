@@ -29,14 +29,15 @@ class ArtDigest {
     }
 
     _getArtStyle(digest) {
-        const artStyles = [
-            "Single Square",
-            "Two Horizontal Bars",
-            "Two Vertical Bars",
-            "Four Squares"
-        ];
+        // const artStyles = [
+        //     "Single Square",
+        //     "Two Horizontal Bars",
+        //     "Two Vertical Bars",
+        //     "Four Squares"
+        // ];
         const artStyleDigestChar = digest[58];
-        return artStyles[parseInt(artStyleDigestChar, 16) >> 2];
+        // return artStyles[parseInt(artStyleDigestChar, 16) >> 2];
+        return parseInt(artStyleDigestChar, 16) >> 2;
     }
 
     _getBackgroundColor(digest) {

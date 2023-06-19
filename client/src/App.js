@@ -32,7 +32,10 @@ class App extends React.Component {
                         <p>Art Style: {artDigest.artStyle}</p>
                         <p>Background Color: {artDigest.backgroundColor}</p>
                         <p>Interior Colors: {artDigest.interiorColors.join(', ')}</p>
-                        <ArtPiece backgroundColor={colors[colorNumberMap[artDigest.backgroundColor]]} />
+                        <ArtPiece
+                            backgroundColor={colors[colorNumberMap[artDigest.backgroundColor]]}
+                            artStyle={artDigest.artStyle}
+                        />
                     </div>
                 )}
                 <ColorPaletteDemo />
