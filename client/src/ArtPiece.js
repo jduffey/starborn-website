@@ -2,16 +2,25 @@ import { colors, colorNumberMap } from './color-palette';
 
 const BORDER_WIDTH = 10;
 
-const allColorsAreBlack = (colors) => {
-    console.log(colors);
-    return colors.every(color => color === '#000000');
+console.log(colors);
+
+const allColorsAreBlack = (candidates) => {
+    console.log(candidates);
+    return candidates.every(candidate => {
+        console.log(candidate);
+        const result = candidate === colors.BLACK;
+        console.log(colors.BLACK);
+        console.log(result);
+        return result;
+    });
 }
 
 const getStrokeColor = (backgroundColor, patternColors) => {
-    let strokeColor = 'black';
+    let strokeColor = colors.BLACK;
     if (allColorsAreBlack(patternColors)) {
-        if (backgroundColor === '#000000') {
-            strokeColor = 'white';
+        console.log('all colors are black');
+        if (backgroundColor === colors.BLACK) {
+            strokeColor = colors.WHITE;
         } else {
             strokeColor = backgroundColor;
         }
@@ -60,7 +69,6 @@ const createFourSquareArt = (interiorColors) => {
 }
 
 const ArtPiece = ({ backgroundColor, artStyle, interiorColors }) => {
-    backgroundColor = "#000000";
     interiorColors = [1, 1, 1, 1];
     const mappedColors = interiorColors.map(colorNumber => colors[colorNumberMap[colorNumber]]);
 
