@@ -1,7 +1,7 @@
 import React from 'react';
 import ArtDigest from './ArtDigest';
 import ArtPiece from './ArtPiece';
-import ColorPalette from './ColorPalette';
+import ColorPaletteDemo from './ColorPaletteDemo';
 import './App.css';
 
 class App extends React.Component {
@@ -34,7 +34,7 @@ class App extends React.Component {
                     </div>
                 )}
                 <ArtPiece />
-                <ColorPalette />
+                <ColorPaletteDemo />
             </div>
         );
     }
