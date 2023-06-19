@@ -1,0 +1,11 @@
+{
+  "name": "starborn-website",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run start-client",
+    "start-client": "cd client && npm start"
+  },
+  "author": "",
+  "license": "ISC"
+}
