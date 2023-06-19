@@ -2,6 +2,7 @@ import React from 'react';
 import ArtDigest from './ArtDigest';
 import ArtPiece from './ArtPiece';
 import ColorPaletteDemo from './ColorPaletteDemo';
+import { colors, colorNumberMap } from './color-palette';
 import './App.css';
 
 class App extends React.Component {
@@ -31,9 +32,9 @@ class App extends React.Component {
                         <p>Art Style: {artDigest.artStyle}</p>
                         <p>Background Color: {artDigest.backgroundColor}</p>
                         <p>Interior Colors: {artDigest.interiorColors.join(', ')}</p>
+                        <ArtPiece backgroundColor={colors[colorNumberMap[artDigest.backgroundColor]]} />
                     </div>
                 )}
-                <ArtPiece />
                 <ColorPaletteDemo />
             </div>
         );

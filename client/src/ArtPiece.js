@@ -1,7 +1,12 @@
-function ArtPiece() {
+const ArtPiece = ({ backgroundColor }) => {
     return (
-        <div className="art-piece">
+        <div>
             <h2>Art Piece Placeholder</h2>
+            <div
+                className="art-piece"
+                style={{ backgroundColor: backgroundColor }}
+            >
+            </div>
         </div>
     );
 }

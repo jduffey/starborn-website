@@ -8,3 +8,14 @@ export const colors = {
     'BLUE': '#0000FF',
     'PURPLE': '#6A0DAD',
 }
+
+export const colorNumberMap = {
+    0: 'WHITE',
+    1: 'BLACK',
+    2: 'RED',
+    3: 'ORANGE',
+    4: 'YELLOW',
+    5: 'GREEN',
+    6: 'BLUE',
+    7: 'PURPLE',
+}
