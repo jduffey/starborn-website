@@ -41,7 +41,8 @@
 .art-piece {
     width: 400px;
     height: 400px;
-    outline: 4px solid black;
+    outline: 10px solid black;
+    margin-left: 20px;
 }
 
 .color-palette {
