@@ -38,6 +38,12 @@
     }
 }
 
+.art-piece {
+    width: 400px;
+    height: 400px;
+    outline: 4px solid black;
+}
+
 .color-palette {
     display: flex;
     flex-wrap: wrap;

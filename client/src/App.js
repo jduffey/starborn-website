@@ -1,5 +1,6 @@
 import React from 'react';
 import ArtDigest from './ArtDigest';
+import ArtPiece from './ArtPiece';
 import ColorPalette from './ColorPalette';
 import './App.css';
 
@@ -32,6 +33,7 @@ class App extends React.Component {
                         <p>Interior Colors: {artDigest.interiorColors.join(', ')}</p>
                     </div>
                 )}
+                <ArtPiece />
                 <ColorPalette />
             </div>
         );
