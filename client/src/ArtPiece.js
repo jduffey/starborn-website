@@ -1,3 +1,5 @@
+import { colors, colorNumberMap } from './color-palette';
+
 const BORDER_WIDTH = 10;
 
 const rectangle = (x, y, width, height, fill, stroke) => {
@@ -13,34 +15,36 @@ const rectangle = (x, y, width, height, fill, stroke) => {
     />
 }
 
-const singleSquare = (fillColor) => {
-    return rectangle(100, 100, 200, 200, fillColor, "black");
+const singleSquare = (interiorColors) => {
+    return rectangle(100, 100, 200, 200, interiorColors[0], "black");
 }
 
-const createTwoHorizontalBarArt = (fillColor) => {
+const createTwoHorizontalBarArt = (interiorColors) => {
     return [
-        rectangle(100, 100, 200, 100, fillColor, "black"),
-        rectangle(100, 200, 200, 100, fillColor, "black")
+        rectangle(100, 100, 200, 100, interiorColors[0], "black"),
+        rectangle(100, 200, 200, 100, interiorColors[1], "black")
     ];
 }
 
-const createTwoVerticalBarArt = (fillColor) => {
+const createTwoVerticalBarArt = (interiorColors) => {
     return [
-        rectangle(100, 100, 100, 200, fillColor, "black"),
-        rectangle(200, 100, 100, 200, fillColor, "black")
+        rectangle(100, 100, 100, 200, interiorColors[0], "black"),
+        rectangle(200, 100, 100, 200, interiorColors[1], "black")
     ];
 }
 
-const createFourSquareArt = (fillColor) => {
+const createFourSquareArt = (interiorColors) => {
     return [
-        rectangle(100, 100, 100, 100, fillColor, "black"),
-        rectangle(200, 100, 100, 100, fillColor, "black"),
-        rectangle(100, 200, 100, 100, fillColor, "black"),
-        rectangle(200, 200, 100, 100, fillColor, "black")
+        rectangle(100, 100, 100, 100, interiorColors[0], "black"),
+        rectangle(200, 100, 100, 100, interiorColors[1], "black"),
+        rectangle(100, 200, 100, 100, interiorColors[2], "black"),
+        rectangle(200, 200, 100, 100, interiorColors[3], "black")
     ];
 }
 
-const ArtPiece = ({ backgroundColor, artStyle }) => {
+const ArtPiece = ({ backgroundColor, artStyle, interiorColors }) => {
+    const mappedColors = interiorColors.map(colorNumber => colors[colorNumberMap[colorNumber]]);
+
     return (
         <div>
             <h2>Art Piece Placeholder</h2>
@@ -49,10 +53,10 @@ const ArtPiece = ({ backgroundColor, artStyle }) => {
                 style={{ backgroundColor: backgroundColor }}
             >
                 {{
-                    0: singleSquare("pink"),
-                    1: createTwoHorizontalBarArt("pink"),
-                    2: createTwoVerticalBarArt("pink"),
-                    3: createFourSquareArt("pink"),
+                    0: singleSquare(mappedColors),
+                    1: createTwoHorizontalBarArt(mappedColors),
+                    2: createTwoVerticalBarArt(mappedColors),
+                    3: createFourSquareArt(mappedColors),
                 }[artStyle]}
             </svg>
         </div>

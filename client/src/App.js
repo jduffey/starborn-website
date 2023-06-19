@@ -35,6 +35,7 @@ class App extends React.Component {
                         <ArtPiece
                             backgroundColor={colors[colorNumberMap[artDigest.backgroundColor]]}
                             artStyle={artDigest.artStyle}
+                            interiorColors={artDigest.interiorColors}
                         />
                     </div>
                 )}
